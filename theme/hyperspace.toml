@@ -1,0 +1,183 @@
+format = """
+$localip\
+$username$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$line_break\
+$character
+"""
+
+right_format = """
+$cmd_duration\
+$time
+"""
+
+add_newline = false
+
+[username]
+disabled = false
+show_always = true
+format = '[$user@](bright-cyan)'
+
+[hostname]
+ssh_symbol = " "
+ssh_only = false
+disabled = false
+style = "bright-cyan"
+format = '[$hostname]($style) '
+
+#Sorted asc
+[aws]
+symbol = " "
+format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+
+[bun]
+symbol = "bun"
+version_format = 'v${raw}'
+style = "bold cyan"
+format = '\[[$symbol( $version)]($style)\]'
+
+[c]
+symbol = " "
+format = '\[[$symbol($version(-$name))]($style)\]'
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[cmd_duration]
+format = '\[[󱫑 $duration]($style)\]'
+style = "yellow"
+
+[cmake]
+format = '\[[$symbol($version)]($style)\]'
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+
+[directory]
+read_only = " 󰌾"
+style = "cyan"
+truncation_length = 8
+truncation_symbol = '…/'
+truncate_to_repo = true
+
+[docker_context]
+symbol = " "
+format = '[$symbol]($style)'
+
+# current branch
+[git_branch]
+symbol = " "
+format = "[$symbol]($style)[$branch]($style)"
+style = "bright-purple"
+
+[git_status]
+format = "[[(*$conflicted $untracked $modified $staged $renamed $deleted)](purple)(ahead_behind:$ahead_behind stashed:$stashed)]($style)"
+style = "purple"
+conflicted = "conflicted"
+untracked = "untracked"
+modified = "modified"
+staged = "staged"
+renamed = "renamed"
+deleted = "deleleted"
+stashed = "stashed"
+
+# during ongoing operations: git rebase -i
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[gradle]
+format = '\[[${symbol}radle ($version)]($style)\]'
+style = "bold cyan"
+
+[java]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[kotlin]
+symbol = '🅺 '
+version_format = 'v${raw}'
+style = 'bold cyan'
+format = '\[[$symbol($version)]($style)\]'
+
+[line_break]
+disabled = false
+[localip]
+ssh_only = false
+format = '[@$localipv4](bold cyan) '
+disabled = false
+
+[nodejs]
+symbol = " "
+# override the detect_files property of the nodejs module so as to only show the bun runtime:
+detect_files = ['package.json', '.node-version', '!bunfig.toml', '!bun.lockb']
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+
+[package]
+symbol = "󰏗 "
+format = '\[[$symbol$version]($style)\]'
+[python]
+symbol = " "
+format = '\[[${symbol}($virtualenv)]($style)\]'
+style = "bold cyan"
+
+[rust]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[time]
+use_12hr = false
+disabled = false
+style = "dimmed black"
+time_format = "%H:%M:%S \\ %A, %d, %b, %Y"
+format = '[\[  $time \]]($style) '
