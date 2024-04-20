@@ -76,7 +76,7 @@ format = "[$symbol]($style)[$branch]($style)"
 style = "bright-purple"
 
 [git_status]
-format = "[[(*$conflicted $untracked $modified $staged $renamed $deleted)](purple)(ahead_behind:$ahead_behind stashed:$stashed)]($style)"
+format = "[(*$conflicted $untracked $modified $staged $renamed $deleted $diverged)](purple)"
 style = "purple"
 conflicted = "conflicted"
 untracked = "untracked"
@@ -85,6 +85,9 @@ staged = "staged"
 renamed = "renamed"
 deleted = "deleleted"
 stashed = "stashed"
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
 
 # during ongoing operations: git rebase -i
 [git_state]
