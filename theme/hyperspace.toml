@@ -44,9 +44,8 @@ symbol = " "
 format = '\[[$symbol($version(-$name))]($style)\]'
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = "[〣](bold black)"
+error_symbol = "[〣](bold red)"
 
 [cmd_duration]
 format = '\[[󱫑 $duration]($style)\]'
